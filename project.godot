@@ -13,3 +13,11 @@ config_version=5
 config/name="The Missing Engine"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=160
+window/size/viewport_height=120
+window/size/window_width_override=640
+window/size/window_height_override=480
+window/dpi/allow_hidpi=false
