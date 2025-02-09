@@ -19,6 +19,7 @@ window/size/viewport_width=160
 window/size/viewport_height=120
 window/size/window_width_override=640
 window/size/window_height_override=480
+window/stretch/mode="canvas_items"
 window/dpi/allow_hidpi=false
 
 [input]
