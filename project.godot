@@ -22,6 +22,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={}
 directories/dtl_directory={}
+layout/style_list=["res://dialogues/styles/reference/reference.tres"]
+layout/default_style="res://dialogues/styles/reference/reference.tres"
 
 [display]
 
