@@ -21,7 +21,9 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"test": "res://dialogues/timelines/test.dtl"
+}
 layout/style_list=["res://dialogues/styles/reference/reference.tres", "res://dialogues/styles/bottom/bottom.tres"]
 layout/default_style="res://dialogues/styles/bottom/bottom.tres"
 extensions_folder="res://addons/dialogic_additions"
