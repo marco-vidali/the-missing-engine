@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1gn58s0w0sxr"]
+
+[ext_resource type="Script" path="res://dialogues/styles/bottom/CustomBottom/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="2_avmmi"]
+[ext_resource type="FontFile" uid="uid://c6afw8hyq52b3" path="res://assets/fonts/04b_03.ttf" id="2_hd4s8"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="3_7sedr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on8kl"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="Custom" type="CanvasLayer"]
+script = ExtResource("1_ifsho")
+
+[node name="DialogTextPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+offset_left = 5.0
+offset_top = 83.0
+offset_right = 155.0
+offset_bottom = 115.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_on8kl")
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="DialogTextPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 146.0
+offset_bottom = 28.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_hd4s8")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "Some default text"
+scroll_active = false
+visible_characters_behavior = 1
+script = ExtResource("2_avmmi")
+
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="DialogTextPanel/DialogicNode_DialogText"]
+unique_name_in_owner = true
+script = ExtResource("3_7sedr")
+play_every_character = 0
