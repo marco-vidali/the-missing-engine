@@ -1,11 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1gn58s0w0sxr"]
+[gd_scene load_steps=8 format=3 uid="uid://c1gn58s0w0sxr"]
 
 [ext_resource type="Script" path="res://dialogues/styles/bottom/CustomBottom/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="2_avmmi"]
 [ext_resource type="FontFile" uid="uid://c6afw8hyq52b3" path="res://assets/fonts/04b_03.ttf" id="2_hd4s8"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="3_7sedr"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="6_hmly6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_on8kl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kne5s"]
+content_margin_left = 4.0
+content_margin_top = 3.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4v5q"]
+content_margin_left = 4.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 4.0
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
@@ -16,32 +33,64 @@ border_color = Color(1, 1, 1, 1)
 [node name="Custom" type="CanvasLayer"]
 script = ExtResource("1_ifsho")
 
-[node name="DialogTextPanel" type="Panel" parent="."]
-unique_name_in_owner = true
-offset_left = 5.0
-offset_top = 83.0
-offset_right = 155.0
-offset_bottom = 115.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_on8kl")
+[node name="DialogueBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="DialogicNode_DialogText" type="RichTextLabel" parent="DialogTextPanel"]
+[node name="DialogTextPanel" type="PanelContainer" parent="DialogueBox"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 146.0
-offset_bottom = 28.0
+offset_left = 5.0
+offset_top = 84.0
+offset_right = 155.0
+offset_bottom = 115.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kne5s")
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="DialogueBox/DialogTextPanel"]
+unique_name_in_owner = true
+layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("2_hd4s8")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
-text = "Some default text"
+text = "Placeholder text"
+fit_content = true
 scroll_active = false
 visible_characters_behavior = 1
 script = ExtResource("2_avmmi")
 
-[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="DialogTextPanel/DialogicNode_DialogText"]
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="DialogueBox/DialogTextPanel/DialogicNode_DialogText"]
 unique_name_in_owner = true
 script = ExtResource("3_7sedr")
 play_every_character = 0
+
+[node name="NameLabelHolder" type="Control" parent="DialogueBox/DialogTextPanel"]
+layout_mode = 2
+
+[node name="NameLabelPanel" type="PanelContainer" parent="DialogueBox/DialogTextPanel/NameLabelHolder"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.137
+anchor_top = -0.521
+anchor_right = 0.137
+anchor_bottom = -0.521
+offset_left = -23.454
+offset_top = -7.496
+offset_right = -10.454
+offset_bottom = 7.504
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4v5q")
+
+[node name="DialogicNode_NameLabel" type="Label" parent="DialogueBox/DialogTextPanel/NameLabelHolder/NameLabelPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_hd4s8")
+theme_override_font_sizes/font_size = 8
+text = "Character"
+script = ExtResource("6_hmly6")

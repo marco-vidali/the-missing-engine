@@ -20,7 +20,9 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"test": "res://dialogues/characters/test.dch"
+}
 directories/dtl_directory={
 "test": "res://dialogues/timelines/test.dtl"
 }
@@ -46,6 +48,8 @@ audio/max_channels=4.0
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+variables={}
+glossary/default_case_sensitive=true
 
 [display]
 

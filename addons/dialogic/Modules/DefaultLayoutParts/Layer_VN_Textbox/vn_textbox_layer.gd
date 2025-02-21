@@ -18,7 +18,6 @@ extends DialogicLayoutLayer
 ## remove or add # (commenting) to the method line.
 
 
-
 enum Alignments {LEFT, CENTER, RIGHT}
 
 enum AnimationsIn {NONE, POP_IN, FADE_UP}
@@ -28,7 +27,7 @@ enum AnimationsNewText {NONE, WIGGLE}
 @export_group("Text")
 
 @export_subgroup("Alignment & Size")
-@export var text_alignment: Alignments= Alignments.LEFT
+@export var text_alignment: Alignments = Alignments.LEFT
 @export var text_use_global_size: bool = true
 @export var text_size: int = 15
 
@@ -66,7 +65,7 @@ enum AnimationsNewText {NONE, WIGGLE}
 @export_group("Name Label")
 
 @export_subgroup('Color')
-@export var name_label_use_global_color: bool= true
+@export var name_label_use_global_color: bool = true
 @export var name_label_use_character_color: bool = true
 @export var name_label_custom_color: Color = Color.WHITE
 
@@ -93,8 +92,8 @@ enum AnimationsNewText {NONE, WIGGLE}
 @export var next_indicator_show_on_questions: bool = true
 @export var next_indicator_show_on_autoadvance: bool = false
 @export_enum('bounce', 'blink', 'none') var next_indicator_animation: int = 0
-@export_file("*.png","*.svg","*.tres") var next_indicator_texture: String = ''
-@export var next_indicator_size: Vector2 = Vector2(25,25)
+@export_file("*.png", "*.svg", "*.tres") var next_indicator_texture: String = ''
+@export var next_indicator_size: Vector2 = Vector2(25, 25)
 
 @export_subgroup("Autoadvance")
 @export var autoadvance_progressbar: bool = true
@@ -159,7 +158,7 @@ func _apply_box_settings() -> void:
 
 	var sizer: Control = %Sizer
 	sizer.size = box_size
-	sizer.position = box_size * Vector2(-0.5, -1)+Vector2(0, -box_margin_bottom)
+	sizer.position = box_size * Vector2(-0.5, -1) + Vector2(0, -box_margin_bottom)
 
 
 ## Applies box animations settings to the scene.
@@ -202,12 +201,12 @@ func _apply_name_label_settings() -> void:
 	else:
 		name_label_panel.self_modulate = name_label_box_modulate
 	var dialog_text_panel: PanelContainer = %DialogTextPanel
-	name_label_panel.position = name_label_box_offset+Vector2(0, -40)
+	name_label_panel.position = name_label_box_offset + Vector2(0, -40)
 	name_label_panel.position -= Vector2(
 		dialog_text_panel.get_theme_stylebox(&'panel', &'PanelContainer').content_margin_left,
 		dialog_text_panel.get_theme_stylebox(&'panel', &'PanelContainer').content_margin_top)
-	name_label_panel.anchor_left = name_label_alignment/2.0
-	name_label_panel.anchor_right = name_label_alignment/2.0
+	name_label_panel.anchor_left = name_label_alignment / 2.0
+	name_label_panel.anchor_right = name_label_alignment / 2.0
 	name_label_panel.grow_horizontal = [1, 2, 0][name_label_alignment]
 
 

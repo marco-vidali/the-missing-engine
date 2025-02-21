@@ -356,7 +356,6 @@ mouse_filter = 2
 theme_override_styles/panel = ExtResource("13_o35ro")
 metadata/_edit_layout_mode = 1
 metadata/_edit_use_custom_anchors = true
-metadata/_edit_group_ = true
 
 [node name="DialogicNode_NameLabel" type="Label" parent="VN_TextboxLayer/Anchor/AnimationParent/Sizer/DialogTextPanel/NameLabelHolder/NameLabelPanel" node_paths=PackedStringArray("name_label_root")]
 unique_name_in_owner = true
