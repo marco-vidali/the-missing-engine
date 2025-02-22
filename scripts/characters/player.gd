@@ -4,15 +4,21 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+var player = GlobalVariables.player
+
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	return input_direction
 
 func move(input_direction):
+	if not player.can_move: return
+
 	velocity = input_direction * speed
 	move_and_slide()
 
 func animate(input_direction):
+	if not player.can_move: return
+
 	if input_direction.x > 0:
 		animated_sprite.play("walk_right")
 	elif input_direction.x < 0:
