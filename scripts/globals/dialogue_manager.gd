@@ -1,7 +1,6 @@
 extends Node
 
-var player:
-	set(value): GlobalVariables.player = value
+var player = GlobalVariables.player
 
 func _on_timeline_started():
 	player.can_move = false
@@ -11,4 +10,4 @@ func _on_timeline_ended():
 
 func _ready():
 	Dialogic.timeline_started.connect(_on_timeline_started)
-	Dialogic.timeline_started.connect(_on_timeline_ended)
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
