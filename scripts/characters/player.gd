@@ -26,7 +26,7 @@ func animate(input_direction):
 	elif input_direction.y < 0:
 		animated_sprite.play("walk_up")
 
-	if input_direction == Vector2.ZERO:
+	if velocity == Vector2.ZERO:
 		animated_sprite.frame = 1
 
 func rotate_raycast(input_direction):
