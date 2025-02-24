@@ -5,11 +5,11 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var raycast = $RayCast2D
 
-var player = GlobalVariables.player
+var global_player = GlobalVariables.player
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
-	if not player.can_move: input_direction = Vector2.ZERO
+	if not global_player.can_move: input_direction = Vector2.ZERO
 	return input_direction
 
 func move(input_direction):
