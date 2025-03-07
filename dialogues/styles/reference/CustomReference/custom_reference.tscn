@@ -1,22 +1,22 @@
 [gd_scene load_steps=25 format=3 uid="uid://cccrag06v3a83"]
 
-[ext_resource type="Script" path="res://dialogues/styles/reference/CustomReference/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="Script" uid="uid://caiyc8a2idv66" path="res://dialogues/styles/reference/CustomReference/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_c7gu1"]
 [ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="4_23k61"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="6_rfvp7"]
+[ext_resource type="Script" uid="uid://xwmlw8rx52be" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/animations.gd" id="6_rfvp7"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="6_wa3xn"]
 [ext_resource type="StyleBox" uid="uid://dkv1pl1c1dq6" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres" id="7_gbhyo"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="8_dl4m2"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.gd" id="9_1wf8r"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="9_x28xi"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="10_csq1y"]
+[ext_resource type="Script" uid="uid://dtxricd150qu1" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="8_dl4m2"]
+[ext_resource type="Script" uid="uid://c8saxv8qp17gb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.gd" id="9_1wf8r"]
+[ext_resource type="Script" uid="uid://sbar0wr2878y" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="9_x28xi"]
+[ext_resource type="Script" uid="uid://di5gopgkuecgi" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="10_csq1y"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="10_dslyv"]
 [ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="11_yx7la"]
 [ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="12_77qrr"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="12_cmdo7"]
+[ext_resource type="Script" uid="uid://d0smb2sf7njc2" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="12_cmdo7"]
 [ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres" id="13_o35ro"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_e3hfm"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="14_pcmwx"]
+[ext_resource type="Script" uid="uid://dbsmro4yasd62" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="14_pcmwx"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_2213o"]
 
 [sub_resource type="Animation" id="Animation_au0a2"]
@@ -202,10 +202,10 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c14kh"]
 _data = {
-"RESET": SubResource("Animation_au0a2"),
-"new_text": SubResource("Animation_6kbwc"),
-"textbox_fade_up": SubResource("Animation_g6k55"),
-"textbox_pop": SubResource("Animation_htbgc")
+&"RESET": SubResource("Animation_au0a2"),
+&"new_text": SubResource("Animation_6kbwc"),
+&"textbox_fade_up": SubResource("Animation_g6k55"),
+&"textbox_pop": SubResource("Animation_htbgc")
 }
 
 [sub_resource type="FontVariation" id="FontVariation_v8y64"]

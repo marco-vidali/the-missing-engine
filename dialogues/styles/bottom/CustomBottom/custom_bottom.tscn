@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://c1gn58s0w0sxr"]
 
-[ext_resource type="Script" path="res://dialogues/styles/bottom/CustomBottom/default_layout_base.gd" id="1_ifsho"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="2_avmmi"]
+[ext_resource type="Script" uid="uid://7pb3ypcpahss" path="res://dialogues/styles/bottom/CustomBottom/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="Script" uid="uid://dtxricd150qu1" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="2_avmmi"]
 [ext_resource type="FontFile" uid="uid://c6afw8hyq52b3" path="res://assets/fonts/04b_03.ttf" id="2_hd4s8"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="3_7sedr"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="6_hmly6"]
+[ext_resource type="Script" uid="uid://sbar0wr2878y" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="3_7sedr"]
+[ext_resource type="Script" uid="uid://dbsmro4yasd62" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="6_hmly6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kne5s"]
 content_margin_left = 4.0
