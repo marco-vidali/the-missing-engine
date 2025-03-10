@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdnlgqkucspmq"]
+
+[ext_resource type="Script" uid="uid://d3wgt24a3e7x0" path="res://scripts/rooms/main.gd" id="1_s8xwc"]
+[ext_resource type="PackedScene" uid="uid://cpg3yly1fv8ff" path="res://scenes/utilities/teleport.tscn" id="3_0upod"]
+[ext_resource type="PackedScene" uid="uid://btvp6cfkqn6g2" path="res://scenes/characters/player.tscn" id="3_7rvuv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbwho"]
+size = Vector2(20, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ua2eu"]
+size = Vector2(160, 20)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_s8xwc")
+
+[node name="Limits" type="Node2D" parent="."]
+
+[node name="Left" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Left"]
+position = Vector2(-10, 60)
+shape = SubResource("RectangleShape2D_nbwho")
+
+[node name="Right" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Right"]
+position = Vector2(170, 60)
+shape = SubResource("RectangleShape2D_nbwho")
+
+[node name="Top" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Top"]
+position = Vector2(80, -10)
+shape = SubResource("RectangleShape2D_ua2eu")
+
+[node name="Bottom" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Bottom"]
+position = Vector2(80, 130)
+shape = SubResource("RectangleShape2D_ua2eu")
+
+[node name="Player" parent="." instance=ExtResource("3_7rvuv")]
+unique_name_in_owner = true
+position = Vector2(80, 60)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="Teleport" parent="." instance=ExtResource("3_0upod")]
+position = Vector2(35, 89)
+destination = "scenes/rooms/test_1.tscn"

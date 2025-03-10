@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://hgga5nmh10qi"]
+[gd_scene load_steps=7 format=3 uid="uid://hgga5nmh10qi"]
 
-[ext_resource type="PackedScene" uid="uid://btvp6cfkqn6g2" path="res://scenes/characters/player.tscn" id="1_swphx"]
-[ext_resource type="Script" uid="uid://d3wgt24a3e7x0" path="res://scripts/rooms/main.gd" id="1_v64w0"]
-[ext_resource type="PackedScene" uid="uid://c5h0g1m5ma3ps" path="res://scenes/utilities/dialogue_trigger.tscn" id="3_1e2rx"]
+[ext_resource type="Script" uid="uid://d3wgt24a3e7x0" path="res://scripts/rooms/main.gd" id="1_cgtqr"]
+[ext_resource type="PackedScene" uid="uid://c5h0g1m5ma3ps" path="res://scenes/utilities/dialogue_trigger.tscn" id="2_vgspx"]
+[ext_resource type="PackedScene" uid="uid://btvp6cfkqn6g2" path="res://scenes/characters/player.tscn" id="3_2x613"]
+[ext_resource type="PackedScene" uid="uid://cpg3yly1fv8ff" path="res://scenes/utilities/teleport.tscn" id="4_vgspx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbwho"]
 size = Vector2(20, 232)
@@ -11,7 +12,7 @@ size = Vector2(20, 232)
 size = Vector2(265, 20)
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_v64w0")
+script = ExtResource("1_cgtqr")
 
 [node name="Limits" type="Node2D" parent="."]
 
@@ -39,14 +40,18 @@ shape = SubResource("RectangleShape2D_ua2eu")
 position = Vector2(132.5, 202)
 shape = SubResource("RectangleShape2D_ua2eu")
 
-[node name="DialogueTrigger" parent="." instance=ExtResource("3_1e2rx")]
+[node name="DialogueTrigger" parent="." instance=ExtResource("2_vgspx")]
 position = Vector2(127, 52)
 dialogue = "test"
 
-[node name="Player" parent="." instance=ExtResource("1_swphx")]
+[node name="Player" parent="." instance=ExtResource("3_2x613")]
 unique_name_in_owner = true
-position = Vector2(99, 82)
+position = Vector2(80, 60)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="Teleport" parent="." instance=ExtResource("4_vgspx")]
+position = Vector2(115, 100)
+destination = "scenes/rooms/test_2.tscn"
