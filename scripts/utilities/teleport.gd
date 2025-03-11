@@ -5,5 +5,7 @@ extends Area2D
 @onready var player = %Player
 
 func _on_body_entered(body):
-    if body == player:
-        get_tree().change_scene_to_file("res://" + destination)
+	if body == player:
+		Transition.transition()
+		await Transition.transition_finished
+		get_tree().change_scene_to_file("res://" + destination)
