@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=5 format=3 uid="uid://bjas1v1l8c7my"]
+
+[ext_resource type="PackedScene" uid="uid://b5predfmrm8sr" path="res://dialogues/styles/full_screen/CustomFullScreen/custom_full_screen.tscn" id="1_r0fys"]
+[ext_resource type="Script" uid="uid://bcbxpdjntjmr1" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_xc8c6"]
+[ext_resource type="Script" uid="uid://bb7wpexr21t7s" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_r0fys"]
+
+[sub_resource type="Resource" id="Resource_t30mv"]
+script = ExtResource("1_xc8c6")
+scene = ExtResource("1_r0fys")
+overrides = {}
+
+[resource]
+script = ExtResource("2_r0fys")
+name = "full_screen"
+layer_list = Array[String]([])
+layer_info = {
+"": SubResource("Resource_t30mv")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_xc8c6")]([])
+metadata/_latest_layer = ""

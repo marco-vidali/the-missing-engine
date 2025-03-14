@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5predfmrm8sr"]
+
+[ext_resource type="Script" uid="uid://cgjvmxw407lmj" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="FontFile" uid="uid://c6afw8hyq52b3" path="res://assets/fonts/04b_03.ttf" id="2_378og"]
+[ext_resource type="Script" uid="uid://dtxricd150qu1" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_kmgoh"]
+[ext_resource type="Script" uid="uid://sbar0wr2878y" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_ll2p1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e0a0"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Custom" type="CanvasLayer"]
+script = ExtResource("1_ifsho")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5e0a0")
+
+[node name="DialogicNode_DialogText" type="RichTextLabel" parent="PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_378og")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "Placeholder text"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+visible_characters_behavior = 1
+script = ExtResource("3_kmgoh")
+
+[node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="PanelContainer/DialogicNode_DialogText"]
+unique_name_in_owner = true
+script = ExtResource("4_ll2p1")
+play_every_character = 0
