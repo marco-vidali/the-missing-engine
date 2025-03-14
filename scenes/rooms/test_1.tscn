@@ -15,6 +15,7 @@ size = Vector2(265, 20)
 script = ExtResource("1_cgtqr")
 
 [node name="Limits" type="Node2D" parent="."]
+position = Vector2(20, 20)
 
 [node name="Left" type="StaticBody2D" parent="Limits"]
 
@@ -41,17 +42,22 @@ position = Vector2(132.5, 202)
 shape = SubResource("RectangleShape2D_ua2eu")
 
 [node name="DialogueTrigger" parent="." instance=ExtResource("2_vgspx")]
-position = Vector2(127, 52)
+position = Vector2(147, 72)
 dialogue = "test"
 
 [node name="Player" parent="." instance=ExtResource("3_2x613")]
 unique_name_in_owner = true
-position = Vector2(80, 60)
+position = Vector2(79, 58)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 320
+limit_bottom = 232
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="Teleport" parent="." instance=ExtResource("4_vgspx")]
-position = Vector2(115, 100)
+position = Vector2(135, 120)
 destination = "scenes/rooms/test_2.tscn"

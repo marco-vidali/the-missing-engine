@@ -14,6 +14,7 @@ size = Vector2(160, 20)
 script = ExtResource("1_s8xwc")
 
 [node name="Limits" type="Node2D" parent="."]
+position = Vector2(20, 20)
 
 [node name="Left" type="StaticBody2D" parent="Limits"]
 
@@ -41,12 +42,15 @@ shape = SubResource("RectangleShape2D_ua2eu")
 
 [node name="Player" parent="." instance=ExtResource("3_7rvuv")]
 unique_name_in_owner = true
-position = Vector2(80, 60)
+position = Vector2(100, 80)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+limit_left = 0
+limit_top = 0
+limit_right = 200
+limit_bottom = 188
+limit_smoothed = true
 
 [node name="Teleport" parent="." instance=ExtResource("3_0upod")]
-position = Vector2(35, 89)
+position = Vector2(55, 109)
 destination = "scenes/rooms/test_1.tscn"
