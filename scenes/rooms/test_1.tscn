@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://hgga5nmh10qi"]
 
-[ext_resource type="Script" uid="uid://d3wgt24a3e7x0" path="res://scripts/rooms/main.gd" id="1_cgtqr"]
+[ext_resource type="Script" uid="uid://d3wgt24a3e7x0" path="res://scripts/rooms/test.gd" id="1_cgtqr"]
 [ext_resource type="PackedScene" uid="uid://c5h0g1m5ma3ps" path="res://scenes/utilities/dialogue_trigger.tscn" id="2_vgspx"]
 [ext_resource type="PackedScene" uid="uid://btvp6cfkqn6g2" path="res://scenes/characters/player.tscn" id="3_2x613"]
 [ext_resource type="PackedScene" uid="uid://cpg3yly1fv8ff" path="res://scenes/utilities/teleport.tscn" id="4_vgspx"]
