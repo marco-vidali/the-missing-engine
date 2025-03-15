@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdnlgqkucspmq"]
+[gd_scene load_steps=5 format=3 uid="uid://cdnlgqkucspmq"]
 
-[ext_resource type="Script" uid="uid://d3wgt24a3e7x0" path="res://scripts/rooms/main.gd" id="1_s8xwc"]
 [ext_resource type="PackedScene" uid="uid://cpg3yly1fv8ff" path="res://scenes/utilities/teleport.tscn" id="3_0upod"]
 [ext_resource type="PackedScene" uid="uid://btvp6cfkqn6g2" path="res://scenes/characters/player.tscn" id="3_7rvuv"]
 
@@ -11,7 +10,6 @@ size = Vector2(20, 160)
 size = Vector2(160, 20)
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_s8xwc")
 
 [node name="Limits" type="Node2D" parent="."]
 position = Vector2(20, 20)
