@@ -28,6 +28,7 @@ directories/dch_directory={
 "test": "res://dialogues/characters/test.dch"
 }
 directories/dtl_directory={
+"game_saved": "res://dialogues/timelines/game_saved.dtl",
 "test": "res://dialogues/timelines/test.dtl"
 }
 layout/style_list=["res://dialogues/styles/reference/reference.tres", "res://dialogues/styles/bottom/bottom.tres", "res://dialogues/styles/full_screen/full_screen.tres"]

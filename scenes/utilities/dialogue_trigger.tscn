@@ -7,7 +7,6 @@
 size = Vector2(16, 16)
 
 [node name="DialogueTrigger" type="Area2D"]
-scale = Vector2(0.997118, 0.984127)
 script = ExtResource("1_61lax")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

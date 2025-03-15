@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxfsv4uqoyx2r"]
+
+[ext_resource type="Script" uid="uid://d3vq6awoi0dr0" path="res://scripts/utilities/save_point.gd" id="1_ijbgp"]
+[ext_resource type="Texture2D" uid="uid://c7yq62ste827" path="res://assets/sprites/utilities/save_point.png" id="1_nj2r4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijbgp"]
+size = Vector2(16, 16)
+
+[node name="SavePoint" type="Area2D"]
+script = ExtResource("1_ijbgp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nj2r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ijbgp")
