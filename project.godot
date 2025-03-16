@@ -23,7 +23,7 @@ GlobalVariables="*res://scripts/globals/global_variables.gd"
 Transition="*res://scenes/utilities/transition.tscn"
 DialogueManager="*res://scripts/globals/dialogue_manager.gd"
 SaveSystem="*res://scripts/globals/save_system.gd"
-LastRoomLoader="*res://scripts/utilities/last_room_loader.gd"
+LastRoomLoader="*res://scripts/globals/last_room_loader.gd"
 
 [dialogic]
 
