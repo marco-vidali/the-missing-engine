@@ -51,7 +51,7 @@ position = Vector2(67, 108)
 
 [node name="Player" parent="." instance=ExtResource("3_2x613")]
 unique_name_in_owner = true
-position = Vector2(80, 60)
+position = Vector2(79, 60)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0

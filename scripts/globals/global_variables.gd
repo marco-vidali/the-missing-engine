@@ -6,5 +6,9 @@ var progress = {
 	player = {
 		can_move = true,
 		can_interact = true,
+		position = {
+			x = null,
+			y = null,
+		}
 	}
 }

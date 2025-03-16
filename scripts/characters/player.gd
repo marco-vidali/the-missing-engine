@@ -16,6 +16,15 @@ func move(input_direction):
 	velocity = input_direction * speed
 	move_and_slide()
 
+func load_position():
+	if global_player.position.x == null and global_player.position.y == null: return
+	position.x = global_player.position.x
+	position.y = global_player.position.y
+
+func save_position():
+	global_player.position.x = position.x
+	global_player.position.y = position.y
+
 func animate(input_direction):
 	if input_direction.x > 0:
 		animated_sprite.play("walk_right")
@@ -39,9 +48,14 @@ func rotate_raycast(input_direction):
 	elif input_direction.y < 0:
 		raycast.rotation_degrees = 0
 
+func _ready():
+	load_position()
+
 func _physics_process(delta):
 	var input_direction = get_input()
 
 	move(input_direction)
 	animate(input_direction)
 	rotate_raycast(input_direction)
+
+	save_position()
