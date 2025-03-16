@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cccrag06v3a83"]
+[gd_scene load_steps=30 format=3 uid="uid://cccrag06v3a83"]
 
 [ext_resource type="Script" uid="uid://caiyc8a2idv66" path="res://dialogues/styles/reference/CustomReference/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_c7gu1"]
@@ -12,12 +12,16 @@
 [ext_resource type="Script" uid="uid://di5gopgkuecgi" path="res://addons/dialogic/Modules/Text/node_next_indicator.gd" id="10_csq1y"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="10_dslyv"]
 [ext_resource type="Texture2D" uid="uid://b0rpqfg4fhebk" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/next.svg" id="11_yx7la"]
-[ext_resource type="PackedScene" uid="uid://dhk6j6eb6e3q" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn" id="12_77qrr"]
 [ext_resource type="Script" uid="uid://d0smb2sf7njc2" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/autoadvance_indicator.gd" id="12_cmdo7"]
 [ext_resource type="StyleBox" uid="uid://m7gyepkysu83" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres" id="13_o35ro"]
 [ext_resource type="PackedScene" uid="uid://cvgf4c6gg0tsy" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn" id="14_e3hfm"]
 [ext_resource type="Script" uid="uid://dbsmro4yasd62" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="14_pcmwx"]
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="16_2213o"]
+[ext_resource type="Script" uid="uid://ccuk2i677k4lp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.gd" id="16_jij27"]
+[ext_resource type="Script" uid="uid://c4htmgpjb3imt" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="17_dvpg3"]
+[ext_resource type="Script" uid="uid://b2e2chlnxdq1l" path="res://addons/dialogic/Modules/Choice/node_button_sound.gd" id="18_en11p"]
+[ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="19_8gsuc"]
+[ext_resource type="AudioStream" uid="uid://c2viukvbub6v6" path="res://addons/dialogic/Example Assets/sound-effects/typing4.wav" id="20_w2jmi"]
 
 [sub_resource type="Animation" id="Animation_au0a2"]
 length = 0.001
@@ -210,6 +214,8 @@ _data = {
 
 [sub_resource type="FontVariation" id="FontVariation_v8y64"]
 
+[sub_resource type="AudioStream" id="AudioStream_pe27w"]
+
 [node name="Custom" type="CanvasLayer"]
 script = ExtResource("1_ifsho")
 
@@ -226,6 +232,7 @@ visible = false
 apply_overrides_on_ready = true
 
 [node name="VN_TextboxLayer" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -243,7 +250,7 @@ apply_overrides_on_ready = true
 [node name="Animations" type="AnimationPlayer" parent="VN_TextboxLayer"]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_c14kh")
+&"": SubResource("AnimationLibrary_c14kh")
 }
 autoplay = "RESET"
 script = ExtResource("6_rfvp7")
@@ -370,9 +377,95 @@ script = ExtResource("14_pcmwx")
 visible = false
 apply_overrides_on_ready = true
 
-[node name="VN_ChoiceLayer" parent="." instance=ExtResource("12_77qrr")]
-visible = false
+[node name="VN_ChoiceLayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("16_jij27")
 apply_overrides_on_ready = true
+
+[node name="Choices" type="VBoxContainer" parent="VN_ChoiceLayer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -47.0
+offset_right = 42.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+metadata/_edit_layout_mode = 1
+
+[node name="DialogicNode_ChoiceButton1" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ChoiceButton2" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ChoiceButton3" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ChoiceButton4" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ChoiceButton5" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ChoiceButton6" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ChoiceButton7" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ChoiceButton8" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ChoiceButton9" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ChoiceButton10" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ChoiceButton11" type="Button" parent="VN_ChoiceLayer/Choices"]
+layout_mode = 2
+text = "Some text"
+script = ExtResource("17_dvpg3")
+
+[node name="DialogicNode_ButtonSound" type="AudioStreamPlayer" parent="VN_ChoiceLayer/Choices"]
+unique_name_in_owner = true
+script = ExtResource("18_en11p")
+sound_pressed = ExtResource("19_8gsuc")
+sound_hover = ExtResource("20_w2jmi")
+sound_focus = SubResource("AudioStream_pe27w")
 
 [node name="TextInputLayer" parent="." instance=ExtResource("14_e3hfm")]
 visible = false

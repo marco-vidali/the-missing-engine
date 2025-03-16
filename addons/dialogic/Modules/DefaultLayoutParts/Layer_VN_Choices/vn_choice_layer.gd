@@ -96,7 +96,7 @@ func _apply_export_overrides() -> void:
 	if ResourceLoader.exists(boxes_stylebox_focused):
 		layer_theme.set_stylebox(&'focus', &'Button', load(boxes_stylebox_focused) as StyleBox)
 
-	get_choices().add_theme_constant_override(&"separation", boxes_v_separation)
+	# get_choices().add_theme_constant_override(&"separation", boxes_v_separation)
 	self.position = boxes_offset
 
 	for child: Node in get_choices().get_children():

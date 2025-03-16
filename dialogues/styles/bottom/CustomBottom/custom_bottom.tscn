@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1gn58s0w0sxr"]
+[gd_scene load_steps=14 format=3 uid="uid://c1gn58s0w0sxr"]
 
 [ext_resource type="Script" uid="uid://7pb3ypcpahss" path="res://dialogues/styles/bottom/CustomBottom/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="Script" uid="uid://dtxricd150qu1" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="2_avmmi"]
 [ext_resource type="FontFile" uid="uid://c6afw8hyq52b3" path="res://assets/fonts/04b_03.ttf" id="2_hd4s8"]
 [ext_resource type="Script" uid="uid://sbar0wr2878y" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="3_7sedr"]
 [ext_resource type="Script" uid="uid://dbsmro4yasd62" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="6_hmly6"]
+[ext_resource type="Script" uid="uid://ccuk2i677k4lp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.gd" id="6_v7vj7"]
+[ext_resource type="Script" uid="uid://c4htmgpjb3imt" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="7_uslbu"]
+[ext_resource type="Script" uid="uid://b2e2chlnxdq1l" path="res://addons/dialogic/Modules/Choice/node_button_sound.gd" id="8_2e5se"]
+[ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="9_hqm82"]
+[ext_resource type="AudioStream" uid="uid://c2viukvbub6v6" path="res://addons/dialogic/Example Assets/sound-effects/typing4.wav" id="10_cblad"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kne5s"]
 content_margin_left = 4.0
@@ -29,6 +34,8 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="AudioStream" id="AudioStream_v7vj7"]
 
 [node name="Custom" type="CanvasLayer"]
 script = ExtResource("1_ifsho")
@@ -94,3 +101,97 @@ theme_override_fonts/font = ExtResource("2_hd4s8")
 theme_override_font_sizes/font_size = 8
 text = "Character"
 script = ExtResource("6_hmly6")
+
+[node name="Choices" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_v7vj7")
+sounds_pressed = ""
+sounds_hover = ""
+sounds_focus = ""
+apply_overrides_on_ready = true
+
+[node name="Choices" type="HBoxContainer" parent="Choices"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 54.0
+offset_right = 155.0
+offset_bottom = 67.0
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="Choices/Choices"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.67, 0.67, 0.67, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_hd4s8")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4v5q")
+text = "Choice"
+script = ExtResource("7_uslbu")
+
+[node name="Button2" type="Button" parent="Choices/Choices"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.67, 0.67, 0.67, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_hd4s8")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4v5q")
+text = "Choice"
+script = ExtResource("7_uslbu")
+
+[node name="Button3" type="Button" parent="Choices/Choices"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.67, 0.67, 0.67, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_hd4s8")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4v5q")
+text = "Choice"
+script = ExtResource("7_uslbu")
+
+[node name="Button4" type="Button" parent="Choices/Choices"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.67, 0.67, 0.67, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_hd4s8")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s4v5q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4v5q")
+text = "Choice"
+script = ExtResource("7_uslbu")
+
+[node name="DialogicNode_ButtonSound" type="AudioStreamPlayer" parent="Choices/Choices"]
+unique_name_in_owner = true
+script = ExtResource("8_2e5se")
+sound_pressed = ExtResource("9_hqm82")
+sound_hover = ExtResource("10_cblad")
+sound_focus = SubResource("AudioStream_v7vj7")
