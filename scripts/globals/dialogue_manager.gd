@@ -1,6 +1,6 @@
 extends Node
 
-var global_player = GlobalVariables.player
+var global_player = GlobalVariables.progress.player
 
 func _on_timeline_started():
 	global_player.can_move = false

@@ -3,9 +3,9 @@ extends Node
 var save_file_path:
 	get: return GlobalVariables.save_file_path
 
-var save_data:
-	get: return GlobalVariables.save_data
-	set(value): GlobalVariables.save_data = value
+var progress:
+	get: return GlobalVariables.progress
+	set(value): GlobalVariables.progress = value
 
 func deep_merge(target: Dictionary, source: Dictionary) -> void:
 	for key in source:
@@ -19,7 +19,7 @@ func deep_merge(target: Dictionary, source: Dictionary) -> void:
 
 func save_game():
 	var save_file = FileAccess.open(save_file_path, FileAccess.WRITE)
-	save_file.store_var(save_data)
+	save_file.store_var(progress)
 	save_file.close()
 
 func load_game():
@@ -28,9 +28,9 @@ func load_game():
 		var loaded_state = save_file.get_var()
 		save_file.close()
 		
-		var merged_state = save_data.duplicate(true)
+		var merged_state = progress.duplicate(true)
 		deep_merge(merged_state, loaded_state)
-		save_data = merged_state
+		progress = merged_state
 	else:
 		save_game()
 

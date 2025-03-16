@@ -6,7 +6,7 @@ signal transition_finished
 @onready var animation_player = $AnimationPlayer
 @onready var timer = $Timer
 
-var global_player = GlobalVariables.player
+var global_player = GlobalVariables.progress.player
 
 func _ready():
     color_rect.visible = false

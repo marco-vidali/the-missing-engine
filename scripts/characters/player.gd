@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var raycast = $RayCast2D
 
-var global_player = GlobalVariables.player
+var global_player = GlobalVariables.progress.player
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
