@@ -64,4 +64,4 @@ position_smoothing_speed = 10.0
 
 [node name="Teleport" parent="." instance=ExtResource("4_vgspx")]
 position = Vector2(135, 120)
-destination = "scenes/rooms/test_2.tscn"
+destination = "res://scenes/rooms/test_2.tscn"

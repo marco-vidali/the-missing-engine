@@ -4,6 +4,8 @@ extends Area2D
 @onready var player = %Player
 
 var global_player = GlobalVariables.progress.player
+var last_room:
+	set(value): GlobalVariables.progress.last_room = value
 
 func _on_body_entered(body):
 	if body == player:
@@ -13,4 +15,5 @@ func _on_body_entered(body):
 		global_player.position.x = null
 		global_player.position.y = null
 
-		get_tree().change_scene_to_file("res://" + destination)
+		last_room = destination
+		get_tree().change_scene_to_file(destination)

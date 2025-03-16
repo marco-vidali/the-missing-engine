@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdnlgqkucspmq"]
+[gd_scene load_steps=6 format=3 uid="uid://cdnlgqkucspmq"]
 
 [ext_resource type="PackedScene" uid="uid://cpg3yly1fv8ff" path="res://scenes/utilities/teleport.tscn" id="3_0upod"]
 [ext_resource type="PackedScene" uid="uid://btvp6cfkqn6g2" path="res://scenes/characters/player.tscn" id="3_7rvuv"]
+[ext_resource type="PackedScene" uid="uid://bxfsv4uqoyx2r" path="res://scenes/utilities/save_point.tscn" id="3_fn7wp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbwho"]
 size = Vector2(20, 160)
@@ -51,4 +52,7 @@ limit_smoothed = true
 
 [node name="Teleport" parent="." instance=ExtResource("3_0upod")]
 position = Vector2(55, 109)
-destination = "scenes/rooms/test_1.tscn"
+destination = "res://scenes/rooms/test_1.tscn"
+
+[node name="SavePoint" parent="." instance=ExtResource("3_fn7wp")]
+position = Vector2(60, 51)
