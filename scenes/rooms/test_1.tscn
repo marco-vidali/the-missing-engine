@@ -51,7 +51,7 @@ position = Vector2(67, 108)
 
 [node name="Player" parent="." instance=ExtResource("3_2x613")]
 unique_name_in_owner = true
-position = Vector2(79, 60)
+position = Vector2(166, 142)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0
@@ -65,3 +65,5 @@ position_smoothing_speed = 10.0
 [node name="Teleport" parent="." instance=ExtResource("4_vgspx")]
 position = Vector2(135, 120)
 destination = "res://scenes/rooms/test_2.tscn"
+target_x = 108
+target_y = 48

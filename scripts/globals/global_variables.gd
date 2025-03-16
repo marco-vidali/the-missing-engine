@@ -9,8 +9,8 @@ var progress = {
 		can_move = true,
 		can_interact = true,
 		position = {
-			x = null,
-			y = null,
+			x = 166,
+			y = 142,
 		}
 	}
 }

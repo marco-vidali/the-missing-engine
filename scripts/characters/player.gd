@@ -17,7 +17,6 @@ func move(input_direction):
 	move_and_slide()
 
 func load_position():
-	if global_player.position.x == null and global_player.position.y == null: return
 	position.x = global_player.position.x
 	position.y = global_player.position.y
 

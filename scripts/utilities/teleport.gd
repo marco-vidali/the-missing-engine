@@ -1,6 +1,9 @@
 extends Area2D
 
 @export var destination = ""
+@export var target_x = 0
+@export var target_y = 0
+
 @onready var player = %Player
 
 var global_player = GlobalVariables.progress.player
@@ -12,8 +15,8 @@ func _on_body_entered(body):
 		Transition.transition()
 		await Transition.transition_finished
 
-		global_player.position.x = null
-		global_player.position.y = null
+		global_player.position.x = target_x
+		global_player.position.y = target_y
 
 		last_room = destination
 		get_tree().change_scene_to_file(destination)
