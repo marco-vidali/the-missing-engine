@@ -1,14 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5predfmrm8sr"]
+[gd_scene load_steps=16 format=3 uid="uid://b5predfmrm8sr"]
 
-[ext_resource type="Script" uid="uid://cgjvmxw407lmj" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.gd" id="1_ifsho"]
+[ext_resource type="Script" uid="uid://i6erai6le2nn" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.gd" id="1_ifsho"]
 [ext_resource type="FontFile" uid="uid://c6afw8hyq52b3" path="res://assets/fonts/04b_03.ttf" id="2_378og"]
 [ext_resource type="Script" uid="uid://dtxricd150qu1" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_kmgoh"]
-[ext_resource type="Script" uid="uid://sbar0wr2878y" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_ll2p1"]
+[ext_resource type="Script" uid="uid://dyikyuolus3mu" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_ll2p1"]
+[ext_resource type="Script" uid="uid://ccuk2i677k4lp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.gd" id="5_2wipx"]
+[ext_resource type="Script" uid="uid://ob2nb7rtwhna" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="6_jt28v"]
+[ext_resource type="Script" uid="uid://ccmvau3wt0oic" path="res://addons/dialogic/Modules/Choice/node_button_sound.gd" id="7_bq4xx"]
+[ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="8_i6m8a"]
+[ext_resource type="AudioStream" uid="uid://c2viukvbub6v6" path="res://addons/dialogic/Example Assets/sound-effects/typing4.wav" id="9_bkfp5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e0a0"]
 content_margin_left = 10.0
 content_margin_right = 10.0
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lke6a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k2vi6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2tt7g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mvuuq"]
+
+[sub_resource type="AudioStream" id="AudioStream_knjvp"]
 
 [node name="Custom" type="CanvasLayer"]
 script = ExtResource("1_ifsho")
@@ -41,3 +56,97 @@ script = ExtResource("3_kmgoh")
 unique_name_in_owner = true
 script = ExtResource("4_ll2p1")
 play_every_character = 0
+
+[node name="Choices" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_2wipx")
+sounds_pressed = ""
+sounds_hover = ""
+sounds_focus = ""
+apply_overrides_on_ready = true
+
+[node name="Choices" type="HBoxContainer" parent="Choices"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 72.0
+offset_right = 155.0
+offset_bottom = 85.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button" type="Button" parent="Choices/Choices"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.67, 0.67, 0.67, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_378og")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lke6a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k2vi6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2tt7g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mvuuq")
+text = "Choice"
+script = ExtResource("6_jt28v")
+
+[node name="Button2" type="Button" parent="Choices/Choices"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.67, 0.67, 0.67, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_378og")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lke6a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k2vi6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2tt7g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mvuuq")
+text = "Choice"
+script = ExtResource("6_jt28v")
+
+[node name="Button3" type="Button" parent="Choices/Choices"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.67, 0.67, 0.67, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_378og")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lke6a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k2vi6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2tt7g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mvuuq")
+text = "Choice"
+script = ExtResource("6_jt28v")
+
+[node name="Button4" type="Button" parent="Choices/Choices"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.67, 0.67, 0.67, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_378og")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lke6a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k2vi6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2tt7g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mvuuq")
+text = "Choice"
+script = ExtResource("6_jt28v")
+
+[node name="DialogicNode_ButtonSound" type="AudioStreamPlayer" parent="Choices/Choices"]
+unique_name_in_owner = true
+script = ExtResource("7_bq4xx")
+sound_pressed = ExtResource("8_i6m8a")
+sound_hover = ExtResource("9_bkfp5")
+sound_focus = SubResource("AudioStream_knjvp")
